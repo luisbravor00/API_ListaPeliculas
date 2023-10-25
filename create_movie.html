@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Peliculas</title>
+    <link type="text/css" rel="stylesheet" href="/styles/movies_styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="bg-text">
+        <h1>CREAR PELICULAS</h1>
+        <div class="form-container">
+            <form method="POST" action="movies">
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Movie Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputSynopsis" class="col-sm-2 col-form-label">Synopsis</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputSynopsis" name="synopsis" placeholder="Movie Synopsis">
+                    </div>
+                </div>
+                <fieldset class="form-group">
+                    <div class="row" id="inputRadio">
+                        <legend class="col-form-label col-sm-2 pt-0" style="text-align: center;">Genre</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genre" id="gridRadios1" value="Accion" checked>
+                                <label class="form-check-label" for="gridRadios1" style="font-weight: 100;">Accion</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genre" id="gridRadios2" value="Comedia">
+                                <label class="form-check-label" for="gridRadios1" style="font-weight: 100;">Comedia</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genre" id="gridRadios3" value="Ciencia Ficción">
+                                <label class="form-check-label" for="gridRadios1" style="font-weight: 100;">Ciencia Ficción</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genre" id="gridRadios4" value="Terror">
+                                <label class="form-check-label" for="gridRadios1" style="font-weight: 100;">Terror</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="genre" id="gridRadios5" value="Romance">
+                                <label class="form-check-label" for="gridRadios1" style="font-weight: 100;">Romance</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="inputDuration" class="col-sm-2 col-form-label">Duration</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputDuration" name="duration" placeholder="Movie Duration (in minutes)">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputDirector" class="col-sm-2 col-form-label">Director</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputDirector" name="director" placeholder="Movie Director">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputActors" class="col-sm-2 col-form-label">Actors</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputActors" name="actors" placeholder="Movie Actors (separated by commas)">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary" id="btnAddMovie">Añadir Pelicula</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <button class="btn btn-danger" id="btnReturnListMovies">
+            <a href="/">Regresar a Listar Peliculas</a>
+        </button>
+    </div>
+</body>
+</html>

@@ -4,6 +4,6 @@ const peliculasController = require('./../src/controllers/peliculas');
 
 // router.use('/users', authMiddleware);
 
-router.get('/peliculas', peliculasController.listarPeliculas);
-// router.post('/users', usersController.crear);
+router.get('/movies', peliculasController.listarPeliculas);
+router.post('/movies', peliculasController.crearPelicula);
 module.exports = router;
