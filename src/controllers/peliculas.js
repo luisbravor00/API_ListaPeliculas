@@ -34,10 +34,8 @@ class MovieController {
         console.log('\nPelicula nueva:\n'+newMovie);
 
         newMovie.save().then(savedMovie => {
-            console.log("New movie added!");
             res.send('<script>alert("Your movie has been added succesfuly!"); window.location = "/";</script>')
         }).catch(error => {
-            console.log("Error adding the new movie :(");
             res.send('<script>alert("Error adding the new movie :("); window.location = "/";</script>')
         })
     

@@ -42,8 +42,7 @@ body {
     height: 85%;
     padding-left: 10px;
     padding-right: 10px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #btnAddMovie {
