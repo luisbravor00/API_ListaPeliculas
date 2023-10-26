@@ -39,8 +39,8 @@
         .then(data => {
                 const tableBody = document.getElementById('tableBody');
                 if (data.length === 0) {
-                    alert('No hay peliculas que mostrar al momento.');
                     const row = tableBody.insertRow();
+                    window.alert('No hay peliculas que mostrar al momento.');
                     row.insertCell(0).textContent = 'N/A';
                     row.insertCell(1).textContent = 'N/A';
                     row.insertCell(2).textContent = 0;
