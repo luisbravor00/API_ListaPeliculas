@@ -14,17 +14,17 @@
     <div class="bg-text">
         <h1>CREAR PELICULAS</h1>
         <div class="form-container">
-            <form method="POST" action="movies">
+            <form method="POST" action="/movies" autocomplete="off" enctype="application/x-www-form-urlencoded">
                 <div class="form-group row">
                     <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Movie Name">
+                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Movie Name" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputSynopsis" class="col-sm-2 col-form-label">Synopsis</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputSynopsis" name="synopsis" placeholder="Movie Synopsis">
+                        <input type="text" class="form-control" id="inputSynopsis" name="synopsis" placeholder="Movie Synopsis" required>
                     </div>
                 </div>
                 <fieldset class="form-group">
@@ -57,19 +57,19 @@
                 <div class="form-group row">
                     <label for="inputDuration" class="col-sm-2 col-form-label">Duration</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputDuration" name="duration" placeholder="Movie Duration (in minutes)">
+                        <input type="number" class="form-control" id="inputDuration" name="duration" placeholder="Movie Duration (in minutes)" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputDirector" class="col-sm-2 col-form-label">Director</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputDirector" name="director" placeholder="Movie Director">
+                        <input type="text" class="form-control" id="inputDirector" name="director" placeholder="Movie Director" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputActors" class="col-sm-2 col-form-label">Actors</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputActors" name="actors" placeholder="Movie Actors (separated by commas)">
+                        <input type="text" class="form-control" id="inputActors" name="actors" placeholder="Movie Actors (separated by commas)" required>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -79,9 +79,9 @@
                 </div>
             </form>
         </div>
-        <button class="btn btn-danger" id="btnReturnListMovies">
-            <a href="/">Regresar a Listar Peliculas</a>
-        </button>
+        <a href="/">
+            <button class="btn btn-danger" id="btnReturnListMovies">Regresar a Listar Peliculas</button>
+        </a>
     </div>
 </body>
 </html>

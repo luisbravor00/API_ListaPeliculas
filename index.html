@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar Peliculas</title>
     <link type="text/css" rel="stylesheet" href="/styles/index_styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
@@ -12,10 +13,10 @@
 <body>
     <div class="bg-image"></div>
     <div class="bg-text">
-        <div class="table-responsive" id="movieListContainer">
+        <div class="table" id="movieListContainer">
             <h1>LISTADO DE PELICULAS</h1>
             <table class="table" id="movieTable">
-                <thead>
+                <thead class="thead-dark">
                     <tr>
                         <th>Title</th>
                         <th>Genre</th>
@@ -29,30 +30,41 @@
                 </tbody>
             </table>
         </div>
-        <button onclick="" class="btn btn-primary" id="btnAddMovie">
-            <a href="create_movie">Añadir Pelicula</a>
-        </button>
+        <a href="create_movie">
+            <button class="btn btn-primary" id="btnAddMovie">Añadir Pelicula</button>
+        </a>
     </div>
     <script>
         fetch('/movies').then(response => response.json())
         .then(data => {
                 const tableBody = document.getElementById('tableBody');
-                data.forEach(movie => {
+                if (data.length === 0) {
+                    alert('No hay peliculas que mostrar al momento.');
                     const row = tableBody.insertRow();
-                    const title = row.insertCell(0);
-                    const genre = row.insertCell(1);
-                    const duration = row.insertCell(2);
-                    const director = row.insertCell(3);
-                    const actors = row.insertCell(4);
-                    const synopsis = row.insertCell(5);
-                    
-                    title.textContent = movie.name;
-                    genre.textContent = movie.genre;
-                    duration.textContent = movie.duration;
-                    director.textContent = movie.director;
-                    actors.textContent = movie.actors;
-                    synopsis.textContent = movie.synopsis;
-                });
+                    row.insertCell(0).textContent = 'N/A';
+                    row.insertCell(1).textContent = 'N/A';
+                    row.insertCell(2).textContent = 0;
+                    row.insertCell(3).textContent = 'N/A';
+                    row.insertCell(4).textContent = ['N/A'];
+                    row.insertCell(5).textContent = 'N/A';
+                } else {
+                    data.forEach(movie => {
+                        const row = tableBody.insertRow();
+                        const title = row.insertCell(0);
+                        const genre = row.insertCell(1);
+                        const duration = row.insertCell(2);
+                        const director = row.insertCell(3);
+                        const actors = row.insertCell(4);
+                        const synopsis = row.insertCell(5);
+                        
+                        title.textContent = movie.name;
+                        genre.textContent = movie.genre;
+                        duration.textContent = movie.duration;
+                        director.textContent = movie.director;
+                        actors.textContent = movie.actors;
+                        synopsis.textContent = movie.synopsis;
+                    });
+                }
             })
             .catch(error => {
                 console.error('Error showing movies on the table.', error);

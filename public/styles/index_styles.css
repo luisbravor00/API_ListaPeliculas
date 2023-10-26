@@ -33,18 +33,15 @@ body {
 #movieListContainer > h1 {
     letter-spacing: 10px;
     font-weight: bold;
+    color: #fff;
 }
 
 #movieListContainer {
     margin: auto;
     width: 100%;
     height: 85%;
-    border: 1px solid beige;
     padding-left: 10px;
     padding-right: 10px;
-}
-
-#movieTable {
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -52,7 +49,7 @@ body {
 #btnAddMovie {
     margin-top: 20px;
     width: 400px;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 #btnAddMovie > a {

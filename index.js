@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const app = express();
 const routes = require('./routes');
 
-
 app.use('', routes);
 app.use(express.static(__dirname + '/public'));
+
 app.get('', (req, res) => {
     console.log('Recibi una peticion para Listar Peliculas');
     res.sendFile(__dirname + '/index.html');
